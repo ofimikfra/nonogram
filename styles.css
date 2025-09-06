@@ -1,24 +1,44 @@
+body {
+    background-color: whitesmoke;
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    height: 95vh;
+    background-color: gainsboro;
+    padding: 10px;
+}
+
+header {
+    position: fixed;
 }
 
 #gridArea {
-    background-color: azure;
-    border: 2px solid black;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
-#cell {
+#grid {
+    background-color: azure;
+    border: 3px solid lightgray;
+    display: grid;
+    border-radius: 5px;
+}
+.cell {
     width: 30px;
     height: 30px;
     cursor: pointer;
     background-color: white;
     transition: background-color 0.2s ease-in-out;
+    border: 1px solid lightgray;
 }
 
-#cell:hover {
+.cell:hover {
     background-color: lightgray;
     transition: background-color 0.2s ease-in-out;
 }

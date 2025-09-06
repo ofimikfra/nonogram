@@ -13,6 +13,7 @@ function splitColumns(ngm) {
     return columns;
 }
 
+// generate clues for each row
 function generateClues(ngm) {
     let clues = []
     
@@ -37,17 +38,3 @@ function generateClues(ngm) {
 
     return clues
 }
-
-const test5x5 = [
-    [0,0,1,0,1],
-    [0,0,1,0,0],
-    [0,1,1,1,1],
-    [0,0,1,0,0],
-    [0,0,1,0,1]
-];
-
-const testclues = generateClues(splitColumns(test5x5));
-
-testclues.forEach(i => {
-    console.log(i)
-})

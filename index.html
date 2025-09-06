@@ -13,8 +13,29 @@
     </header>
 
     <main>
+        <section>
+            <p>Color/uncolor the cells in the grid by clicking on them.</p>
+            <p>Click "Create My Nonogram!" to generate a nonogram based on the grid.</p>
+
+            <span>Grid size: </span>
+            <input id="gridSize" type="number" step="1" value="5" min="2" max="20">
+
+            <br>
+
+            <span>Common nonogram sizes:</span><br>
+            <button id="5x5" onclick="initGrid(5)">5x5</button>
+            <button id="10x10" onclick="initGrid(10)">10x10</button>
+            <button id="15x15" onclick="initGrid(15)">15x15</button>
+            <button id="20x20" onclick="initGrid(20)">20x20</button>
+
+            <br><br>
+
+            <button id="clear" onclick="clearGrid()">Clear Grid</button>
+            <button id="create">Create My Nonogram!</button>
+        </section>
+
         <section id="gridArea">
-            <div id="cell" data-value="0"></div>
+            <div id="grid"></div>
         </section>
     </main>
 </body>
