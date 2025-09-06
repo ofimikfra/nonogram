@@ -1,11 +1,3 @@
-const test5x5 = [
-    [0,0,1,0,1],
-    [0,0,1,0,0],
-    [0,1,1,1,1],
-    [0,0,1,0,0],
-    [0,0,1,0,1]
-];
-
 // split nonogram into columns
 function splitColumns(ngm) {
     let columns = []
@@ -29,23 +21,30 @@ function generateClues(ngm) {
         let newClue = 0;
 
         row.forEach(i => {
-            if (i == 1) newClue += 1;
-            else if (i == 0 && newClue == 0) return;
-            else if (i == 0 && newClue != 0) {
+            if (i) newClue += 1;
+            else if (!i && !newClue) return;
+            else if (!i && newClue) {
                 newRowClues.push(newClue);
                 newClue = 0;
             } 
             else console.log("Error")
         })
 
-        if (newClue != 0) newRowClues.push(newClue);
-        if (newRowClues.length == 0) newRowClues.push(0);
+        if (newClue) newRowClues.push(newClue);
+        if (!newRowClues.length) newRowClues.push(0);
         clues.push(newRowClues);
     });
 
     return clues
 }
 
+const test5x5 = [
+    [0,0,1,0,1],
+    [0,0,1,0,0],
+    [0,1,1,1,1],
+    [0,0,1,0,0],
+    [0,0,1,0,1]
+];
 
 const testclues = generateClues(splitColumns(test5x5));
 
