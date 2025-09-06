@@ -1,9 +1,9 @@
 const test5x5 = [
-    [1,0,1,0,1],
+    [0,0,1,0,1],
     [0,0,1,0,0],
-    [1,1,1,1,1],
+    [0,1,1,1,1],
     [0,0,1,0,0],
-    [1,0,1,0,1]
+    [0,0,1,0,1]
 ];
 
 // split nonogram into columns
@@ -13,7 +13,8 @@ function splitColumns(ngm) {
     for (let col = 0; col < ngm.length; col++) {
         let newcol = [];
         for (let row = 0; row < ngm.length; row++) {
-            newcol.push(ngm[col][row]);
+            newcol.push(ngm[row][col]);
+            // console.log(ngm[row][col]);
         }
         columns.push(newcol);
     }
@@ -23,4 +24,6 @@ function splitColumns(ngm) {
     });
     
 }
+
+// splitColumns(test5x5);
 
